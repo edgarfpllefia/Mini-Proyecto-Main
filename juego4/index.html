@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Master - Juego de Trivia</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0891b2;
+            --secondary-color: #0e7490;
+            --accent-color: #06b6d4;
+            --background-color: #f8fafc;
+            --card-background: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #64748b;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-primary);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .header-section {
+            background-color: var(--card-background);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0rem 0;
+        }
+
+        .game-title {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .game-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.125rem;
+        }
+
+        .question-card {
+            background: var(--card-background);
+            border: 1px solid var(--border-color);
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .question-title {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .answer-btn {
+            height: 4rem;
+            font-size: 1.125rem;
+            font-weight: 500;
+            border: 2px solid var(--border-color);
+            background: transparent;
+            transition: all 0.2s;
+            margin-bottom: 1rem;
+        }
+
+        .answer-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .answer-letter {
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-right: 0.75rem;
+        }
+
+        .progress-bar-custom {
+            height: 0.75rem;
+            background-color: #e2e8f0;
+            border-radius: 9999px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: var(--primary-color);
+            border-radius: 9999px;
+            transition: width 0.3s;
+        }
+
+        .player-position {
+            width: 5rem;
+            height: 5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 2px solid rgba(8, 145, 178, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .player-active {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        }
+
+        .player-inactive {
+            background: linear-gradient(135deg, #94a3b8, #64748b);
+        }
+
+        .dice-container {
+            width: 6rem;
+            height: 6rem;
+            background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border: 2px solid rgba(6, 182, 212, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .dice-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .dice-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .badge-primary {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 1.125rem;
+        }
+
+        .badge-secondary {
+            background-color: var(--text-secondary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 1.125rem;
+        }
+
+        .badge-accent {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 1.125rem;
+        }
+
+        .badge-outline {
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.375rem;
+            font-size: 0.75rem;
+        }
+
+        .footer-section {
+            background-color: #1e293b;
+            color: #cbd5e1;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .footer-link {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-link:hover {
+            color: var(--accent-color);
+        }
+
+        .ganar{
+            color: rgb(2, 255, 32); 
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header-section">
+        <div class="container">
+            <div class="text-center">
+                <h1 class="game-title">🧠 Quiz Master</h1>
+                <p class="game-subtitle">Pon a prueba tus conocimientos - Dos Jugadores</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <!-- Game Status -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div class="d-flex gap-3">
+                        <span id="preguntaNumero" class="badge-secondary">Preguntas</span>
+                        <span class="badge-primary">Turno: Jugador 1</span>
+                    </div>
+                    <span id="tiempo"class="badge-accent">⏱️ 30s</span>
+                </div>
+
+                <!-- Question Card -->
+                <div class="question-card">
+                    <h2 id="pregunta" class="question-title">Tira el dado para tu primera pregunta</h2>
+                </div>
+
+                <!-- Answer Options -->
+                <div class="mb-4">
+                    <button id="respuestaA" data-respuesta="0" class="btn answer-btn w-100">
+                        <span class="answer-letter">A)</span>
+                        -
+                    </button>
+                    <button id="respuestaB" data-respuesta="1" class="btn answer-btn w-100">
+                        <span class="answer-letter">B)</span>
+                        -
+                    </button>
+                    <button id="respuestaC" data-respuesta="2" class="btn answer-btn w-100">
+                        <span class="answer-letter">C)</span>
+                        -
+                    </button>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="mb-5">
+                    <div class="d-flex justify-content-between text-muted mb-2">
+                        <span>Progreso del juego</span>
+                        <span id="porciento">0%</span>
+                    </div>
+                    <div class="progress-bar-custom">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <!-- Players and Dice Section -->
+                <div class="d-flex justify-content-center align-items-center gap-5 mb-5">
+                    <!-- Player 1 -->
+                    <div class="text-center">
+                        <div class="player-position player-active mb-2">
+                            <span id = "casillaNumero">0</span>
+                        </div>
+                        <span class="badge-primary mb-1 d-block">Jugador 1</span>
+                    </div>
+
+                    <!-- Dice -->
+                    <div class="text-center">
+                        <div class="dice-container mb-3">
+                            <!-- Numero del dado -->
+                            <span class="dice-number">0</span>
+                        </div>
+                        <!-- Boton tirar dado -->
+                        <button id="tirarDado"class="btn btn-outline-primary btn-sm">🎲 Tirar dado</button>
+                    </div>
+
+                    <!-- Player 2 -->
+                    <div class="text-center">
+                        <div class="player-position player-inactive mb-2">
+                            <span>2</span>
+                        </div>
+                        <span class="badge-secondary mb-1 d-block">Jugador 2</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex gap-4">
+                    <a href="#" class="footer-link">📋 Reglas</a>
+                    <a href="#" class="footer-link">⚙️ Configuración</a>
+                    <a href="#" class="footer-link">🏆 Puntuaciones</a>
+                </div>
+                <p class="mb-0 text-muted">© 2024 Quiz Master - Versión 1.0</p>
+            </div>
+        </div>
+    </footer>
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

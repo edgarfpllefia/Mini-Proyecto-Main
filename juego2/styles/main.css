@@ -1,0 +1,32 @@
+*{
+    box-sizing: border-box;
+    height: 100vh;
+}
+
+.divPrincipal{
+    width: fit-content; 
+}
+
+.fila{
+    display: flex;
+    border: 1px solid black;
+    width: fit-content; 
+    height: auto;
+}
+
+.columna{
+    border: 1px solid #000000;
+    width: 50px;
+    height: 50px;
+    background-color:grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.columna img{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}

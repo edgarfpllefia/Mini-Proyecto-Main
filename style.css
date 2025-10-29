@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: linear-gradient(135deg, #ffffff, #c90900)
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100vw;
+}
+
+h1{
+  font-family: "Bungee Tint", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 75px;
+  position:absolute;
+  top: 200px;
+  left: 100px;
+  text-align: center;
+  rotate: -45deg;
+  z-index: 50;
+}
+
+.contenedorCa {
+  width: 50%;
+  height: 50vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Contenedor dentro del carousel, que es el que se desplaza*/
+.trackJuegos {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s ease;
+}
+
+.card {
+  flex: 0 0 100%; /*  cada tarjeta ocupa todo el ancho visible  - ESTO LO SAQUÉ DEL CHAT POR TENER PROBLEMAS CON LA CARD*/
+  height: 100%;
+  background-color: white; /*Si no detecto la imagen de la card, dejo el fondo blanco*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.btn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 10;
+  animation: moverArrbaAbajo 2s ease-in-out infinite;
+}
+
+@keyframes moverArrbaAbajo {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px); /* Se mueve 20px hacia arriba */
+  }
+}
+
+.btn img {
+  width: 30px;
+  height: 30px;
+}

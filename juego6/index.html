@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <title>Proyecto Vanilla - Mini proyecto</title>
+</head>
+<body>
+    <div id="contenedorPrincipal">
+        <div class="fichaUno"></div>
+        <div class="fichaDos"></div>
+        <div id="contenedorTablero">
+        </div>
+        <div id="contenedorMarcador">
+            <div id="jugadores">
+                <div>
+                    <h2>Jugador 1</h2>
+                    <button id="botonDadoUno">Tirar dado</button>
+                </div>
+                <div>
+                    <h2>Jugador 2</h2>
+                    <button id="botonDadoDos">Tirar dado</button>
+                </div>
+            </div>
+            <p id="pTurno">Turno jugador</p>
+            <div id="cajaDado"></div>
+            <div id="contenedorPreguntas">
+                <p id="pregunta">Tira el dado para comenzar el juego</p>
+            </div>
+            <div class="respuestas">
+                <button class="respuestaUno"> - </button>
+                <button class="respuestaDos"> - </button>
+                <button class="respuestaTres"> - </button>
+            </div>
+        </div>
+    </div>
+    <div id="modalGanador">
+            <h2 id="h2Ganador"></h2>
+            <button id="resetGame">NUEVA PARTIDA</button>
+    </div>
+    <script src="index.js" type="module"></script>
+</body>
+</html>

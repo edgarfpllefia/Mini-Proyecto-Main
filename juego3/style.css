@@ -1,0 +1,86 @@
+body{
+  background-image: url(https://imgs.search.brave.com/05Hcjsav6Q-uqGzj7Ax0LYgB-drmIqFhsYxTcNzfKz4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLmNvbS9p/bWFnZXMvaGQvcmVh/bC1zcGFjZS14OXN6/aWt3c2lkd2o3Mmlh/LmpwZw);
+}
+
+#botones{
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+  gap: 100px;
+}
+
+.botonLuz{
+  border: 1px solid white;
+  position: relative;
+  overflow: hidden;
+  padding: 20px 30px;
+  background: #020024;
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+  color: #ffffff;
+  font-size: 16px;
+  font-family: "Orbitron", sans-serif;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.botonLuz::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right, 
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+}
+
+.botonLuz:hover::before {
+  animation: luz-move 2s forwards;
+}
+
+@keyframes luz-move {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
+  }
+}
+
+#contenedorUniverso{
+  display: flex;
+  justify-content: center;
+  margin-top: 4%;
+}
+
+.universo {
+  display: flex;
+  flex-direction: column;
+  box-sizing: content-box;
+}
+
+.fila {
+  display: flex;
+}
+
+.celula {
+  min-width: 10px;
+  width: 10px;
+  max-width: 10px;
+  min-height: 10px;
+  height: 10px;
+  max-height: 10px;
+  border: 1px solid #ccc;
+}
+
+.viva {
+  background-color: rgba(0, 0, 0, 0.61);
+}
+
+.morta {
+  background-color: rgba(255, 255, 255, 0.63);
+}
