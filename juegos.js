@@ -1,22 +1,26 @@
 export const juegos = [
     {
         titulo: "ADIVINA EL NÚMERO",
-        img: "https://jotabarros.com/wp-content/uploads/2012/03/20120226_samil_080.jpg",
+        img: "img/adivina.png",
     },
     {
         titulo: "PACMAN",
-        img: "https://images.ejemplo.com/pacman-game.jpg",
+        img: "img/pacman.jpg",
     },
     {
         titulo: "JUEGO DE LA VIDA",
-        img: "https://images.ejemplo.com/conway-game-of-life.jpg",
+        img: "img/juegovida.png",
     },
     {
         titulo: "QUIZ",
-        img: "https://images.ejemplo.com/quiz-trivia.jpg",
+        img: "img/quiz.png",
+    },
+    {
+        titulo: "INCIDENCIAS",
+        img: "img/incidencias.png",
     },
     {
         titulo: "JUEGO DE LA OCA",
-        img: "https://images.ejemplo.com/juego-oca.jpg",
+        img: "img/oca.png",
     }
 ]
