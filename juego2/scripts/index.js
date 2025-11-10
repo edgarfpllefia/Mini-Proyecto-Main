@@ -4,20 +4,26 @@
 window.addEventListener("keydown", (e) =>{
     
     if(e.key === "ArrowUp"){
+        direccionPacman = 'arriba';
         moverPacman(-1,0)
     }
     if(e.key === "ArrowDown"){
+        direccionPacman = 'abajo';
         moverPacman(+1,0)
     }
     if(e.key === "ArrowLeft"){
+        direccionPacman = 'izquierda';
         moverPacman(0,-1)
     }
     if(e.key === "ArrowRight"){
+        direccionPacman = 'derecha';
         moverPacman(0,+1)
     }
 })
 
 //Columnnas con las que se va a crear la matriz del tablero.
+let direccionPacman = 'izquierda';
+
 let filasTotales = 14;
 let columnasTotales = 14;
 
@@ -68,14 +74,14 @@ function crearMatriz(){
 function crearEnemigos(){
     console.log(matriz);
     for(let contador = 0 ; contador < 4 ; contador++){
-        matriz[enemigo[contador].fila][enemigo[contador].columna] = `<img src="/assets/images/fantasma.png" alt="fantasma">`
+        matriz[enemigo[contador].fila][enemigo[contador].columna] = `<img src="assets/images/fantasma.png" alt="fantasma">`
     }
     container.innerHTML = matriz;
 }
 
 //Crea el pacman dentro de la matriz, en el parametro que se le de en su variable pacman
 function crearPacman(){
-    matriz[pacman.fila][pacman.columna] = `<img src="/assets/images/pacman.png" alt="pacman">`;
+    matriz[pacman.fila][pacman.columna] = `<img src="assets/images/pacman.png" alt="pacman" class="pacman-${direccionPacman}">`;
 }
 
 //Renderiza dentro de cada fila/columna lo que tenga dentro del valor matriz.
@@ -129,7 +135,7 @@ crearEnemigos();
 crearPacman()
 render();
 
-//Meter musica, efecto movimiento, contador de fantasmas comidos y mas cosas que voy viendo.
+
 
 
 
