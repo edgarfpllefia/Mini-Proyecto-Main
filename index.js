@@ -14,7 +14,7 @@ function iniciarRender(){
     let divs = "";
     juegos.forEach((juego) =>{
         console.log(juego.titulo);
-        divs += `<div class="card"><img src="${juego.img}" alt=""></div>`
+        divs += `<div class="card"><a href="${juego.a}"><img src="${juego.img}" alt=""></div></a>`
     })
     track.innerHTML = divs;
     
