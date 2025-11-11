@@ -7,7 +7,7 @@ export const juegos = [
     {
         titulo: "TURNO JUGADOR",
         img: "img/turno.png",
-        a: "Boton Jugador/index.html",
+        a: "Boton jugador/index.html",
     },
     {
         titulo: "PREGUNTAS BÁSICAS",
