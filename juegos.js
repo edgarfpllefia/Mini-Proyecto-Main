@@ -1,5 +1,20 @@
 export const juegos = [
     {
+        titulo: "CALCULADORA BÁSICA",
+        img: "img/calculadora.png",
+        a: "Calculadora basica/index.html",
+    },
+    {
+        titulo: "TURNO JUGADOR",
+        img: "img/turno.png",
+        a: "Boton Jugador/index.html",
+    },
+    {
+        titulo: "PREGUNTAS BÁSICAS",
+        img: "img/preguntas.png",
+        a: "Preguntas básicas/index.html",
+    },
+    {
         titulo: "ADIVINA EL NÚMERO",
         img: "img/adivina.png",
         a: "juego1/index.html",

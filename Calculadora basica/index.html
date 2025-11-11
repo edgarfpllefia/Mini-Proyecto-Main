@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Primer dia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+        }
+
+        h1 {
+            color: white;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        main {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        main > div {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            margin-bottom: 30px;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border 0.3s;
+        }
+
+        input[type="number"]:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        #resultado {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 15px;
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #tablaMultiplicar {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-family: 'Courier New', monospace;
+            line-height: 1.8;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+
+        /*Si tengo el div vacio, se oculta*/
+        #tablaMultiplicar:empty {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 >Calculadora básica</h1>
+    </header>
+    <main>
+        <div>
+            <input id="inputUno" type="number">
+            <input id="inputDos" type="number">
+            <div id="resultado"></div>
+            <button id="botonSumar">Sumar</button>
+        </div>
+        <div>
+            <input id="inputTres" type="number">
+            <button id="botonMultiplicar">Crear tabla multiplicar</button>
+            <div id="tablaMultiplicar"></div>
+        </div>
+    </main>
+    <script src="primerJs.js"></script>
+</body>
+</html>

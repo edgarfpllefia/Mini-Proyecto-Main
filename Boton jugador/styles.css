@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: Arial, sans-serif;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: white;
+    color: #667eea;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+#turno {
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#turno p {
+    margin: 0;
+}
